@@ -85,19 +85,19 @@ void find__func(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
-		{"pop", pop_top},
+		{"push", add_to__stack},
+		{"pall", print__stack},
+		{"pint", print__top},
+		{"pop", pop__top},
 		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
+		{"swap", swap__nodes},
+		{"add", add__nodes},
+		{"sub", sub__nodes},
+		{"div", div__nodes},
+		{"mul", mul__nodes},
+		{"mod", mod__nodes},
+		{"pchar", print__char},
+		{"pstr", print__str},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}
@@ -110,7 +110,7 @@ void find__func(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, ln, format);
+			call__fun(func_list[i].f, opcode, value, ln, format);
 			flag = 0;
 		}
 	}
