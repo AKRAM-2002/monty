@@ -50,7 +50,7 @@ int len__chars(FILE *);
 void find__func(char *, char *, int, int);
 
 /*Stack operations*/
-stack_t *create_node(int n);
+stack_t *create__node(int n);
 void free__nodes(void);
 void print__stack(stack_t **, unsigned int);
 void add_to__stack(stack_t **, unsigned int);
