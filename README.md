@@ -62,8 +62,7 @@ The interpreter will execute the commands in the specified Monty file and produc
 - Other C source files for specific functionalities (implementations of stack and queue operations, error handling, etc.).
 
 ## Contributors
-- Julien Barbier
-- AKRAM BOUTZOUGA (Your Name)
+- AKRAM BOUTZOUGA
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
