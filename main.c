@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	open_file(argv[1]);
-	free_nodes();
+	open__file(argv[1]);
+	free__nodes();
 	return (0);
 }
 
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
  * @n: Number to go inside the node.
  * Return: Upon sucess a pointer to the node. Otherwise NULL.
  */
-stack_t *create_node(int n)
+stack_t *create__node(int n)
 {
 	stack_t *node;
 
@@ -41,7 +41,7 @@ stack_t *create_node(int n)
 /**
  * free_nodes - Frees nodes in the stack.
  */
-void free_nodes(void)
+void free__nodes(void)
 {
 	stack_t *tmp;
 
@@ -62,7 +62,7 @@ void free_nodes(void)
  * @new_node: Pointer to the new node.
  * @ln: line number of the opcode.
  */
-void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void add_to__queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
