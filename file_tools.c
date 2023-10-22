@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void open_file(char *file_name)
+void open__file(char *file_name)
 {
 	FILE *fd = fopen(file_name, "r");
 
@@ -24,7 +24,7 @@ void open_file(char *file_name)
  * Return: void
  */
 
-void read_file(FILE *fd)
+void read__file(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;
@@ -32,7 +32,7 @@ void read_file(FILE *fd)
 
 	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
-		format = parse_line(buffer, line_number, format);
+		format = parse__line(buffer, line_number, format);
 	}
 	free(buffer);
 }
@@ -48,7 +48,7 @@ void read_file(FILE *fd)
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int parse__line(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
@@ -66,7 +66,7 @@ int parse_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	find_func(opcode, value, line_number, format);
+	find__func(opcode, value, line_number, format);
 	return (format);
 }
 
@@ -79,7 +79,7 @@ int parse_line(char *buffer, int line_number, int format)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_func(char *opcode, char *value, int ln, int format)
+void find__func(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
@@ -128,7 +128,7 @@ void find_func(char *opcode, char *value, int ln, int format)
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void call_fun(op_func func, char *op, char *val, int ln, int format)
+void call__fun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *node;
 	int flag;
@@ -149,11 +149,11 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			if (isdigit(val[i]) == 0)
 				err(5, ln);
 		}
-		node = create_node(atoi(val) * flag);
+		node = create__node(atoi(val) * flag);
 		if (format == 0)
 			func(&node, ln);
 		if (format == 1)
-			add_to_queue(&node, ln);
+			add_to__queue(&node, ln);
 	}
 	else
 		func(&head, ln);
